@@ -22,15 +22,21 @@ function encriptarPalabra(palabra) {
 
   return encriptado;
 }
+function remover (){
+    const imagen = document.querySelector(".izquierda img");
+    const textoRemover = document.querySelector(".izquierda div > p:first-child");
+    if (imagen && textoRemover) {
+        imagen.remove();
+        textoRemover.remove();
+    }
+}
 function encriptar() {
     
     const texto = document.getElementById("texto").value;
     const encriptado = encriptarPalabra(texto);
-    const imagen = document.querySelector(".izquierda img");
-    const textoRemover = document.querySelector(".izquierda div > p:first-child");
-    imagen.remove();
-    textoRemover.remove();
-    document.querySelector(".izquierda div > p:last-child").textContent = encriptado;
+    remover();
+   
+    document.querySelector(".reemplazar").textContent = encriptado;
 
     botonCopiar();
 }
@@ -49,8 +55,9 @@ function copiar(boton) {
             boton.textContent = "Copiar";
         }, 2000);
         alert("Texto copiado al portapapeles");
-        location.reload();
+        
     };
+    
 }
 
 function botonCopiar(){
@@ -67,9 +74,9 @@ function botonCopiar(){
     boton.onclick = copiar(boton);
 }
 
-function decryptWord(encryptedWord) {
+function desencriptarPalabra(palabraEncriptada) {
   // Define the decryption rules
-  const decryptionRules = {
+  const palabrasDes = {
     enter: "e",
     imes: "i",
     ai: "a",
@@ -77,17 +84,26 @@ function decryptWord(encryptedWord) {
     ufat: "u",
   };
 
-  let decryptedWord = "";
-  const encryptedLetters = encryptedWord.split(/(enter|imes|ai|ober|ufat)/);
-  for (let i = 0; i < encryptedLetters.length; i++) {
-    const letter = encryptedLetters[i];
-    if (decryptionRules.hasOwnProperty(letter)) {
-      decryptedWord += decryptionRules[letter];
+  let desencriptado = "";
+  const letrasEncriptadas = palabraEncriptada.split(/(enter|imes|ai|ober|ufat)/);
+  for (let i = 0; i < letrasEncriptadas.length; i++) {
+    const letra = letrasEncriptadas[i];
+    if (palabrasDes.hasOwnProperty(letra)) {
+      desencriptado += palabrasDes[letra];
     } else {
-      decryptedWord += letter;
+      desencriptado += letra;
     }
   }
 
-  return decryptedWord;
+  return desencriptado;
+}
+
+function desencriptar(){
+    const texto = document.getElementById("texto").value;
+    const desencriptado = desencriptarPalabra(texto);
+    remover();
+    document.querySelector(".reemplazar").textContent = desencriptado;
+
+    botonCopiar();
 }
 
