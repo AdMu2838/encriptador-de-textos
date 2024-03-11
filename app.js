@@ -75,7 +75,6 @@ function botonCopiar(){
 }
 
 function desencriptarPalabra(palabraEncriptada) {
-  // Define the decryption rules
   const palabrasDes = {
     enter: "e",
     imes: "i",
