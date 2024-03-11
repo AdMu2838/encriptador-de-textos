@@ -35,6 +35,7 @@ header {
     position: absolute;
     width: 100%; /* Modificar el ancho para que ocupe todo el ancho del contenedor */
     bottom: -40px;
+    top: 105%;
 }
 button{
     width: 280px;
@@ -103,6 +104,16 @@ button{
     width: 16px;
     height: 16px;
     
+}
+.advertencia{
+    display: flex;
+    flex-direction: row;
+}
+.advertencia img{
+    width: 3%;
+    height: 3%;
+    margin-top: 3%;
+
 }
 .container{
     display: flex;
@@ -175,6 +186,7 @@ button{
         right: 0;
         width: 82%;
         padding-bottom: 100px;
+        top: 50px;
     }
 
 
