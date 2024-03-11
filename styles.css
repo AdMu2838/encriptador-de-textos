@@ -1,5 +1,7 @@
 html,body{
     background-color: rgb(224, 236, 255);
+    margin: 0;
+    padding: 0;
 }
 header {
     display: flex;
@@ -16,7 +18,7 @@ header {
 }
 .derecha{
     position: relative; 
-    width: 577px;
+    width: 40%;
     height: 400px;
     left: 240px;
     top: 168px;
@@ -44,7 +46,7 @@ button{
 
 }
 #texto{
-    width: 577px;
+    width: 100%;
     height: 350px;
     left: 240px;
     top: 168px;
@@ -110,15 +112,13 @@ button{
     height: 100%;
     left: 0px;
     top: 0px;
-    width: 100%;
-    height: 100%;
 
 }
 .izquierda{
     position: relative;
     margin-left: 10%;
-    width: 350px;
-    height: 80%;
+    width: 25%;
+    height: 100%;
     left: 240px;
     margin-top: 5%;
     background-color: #FFFFFF;
@@ -127,7 +127,6 @@ button{
 }
 
 .izquierda img{
-
     width: 80%;
     display: block;
     margin: 0 auto;
@@ -137,6 +136,7 @@ button{
     width: 100%;
     height: 100%;
     text-align: center;
+    
 }
 
 .izquierda div >p:first-child{
